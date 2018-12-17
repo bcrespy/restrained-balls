@@ -58,6 +58,7 @@
     "@creenv/stats": "0.0.1",
     "@creenv/vector": "^1.0.3",
     "fs": "0.0.1-security",
+    "knuth-shuffle": "^1.0.8",
     "postprocessing": "^5.3.2",
     "three": "^0.99.0"
   }
