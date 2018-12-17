@@ -5,6 +5,7 @@ import AudioData from "@creenv/audio/audio-analysed-data";
 import config from "./config";
 
 import Camera from "./camera";
+import ChainedBalls from "./chained-balls";
 
 import { EffectComposer, EffectPass, RenderPass } from "postprocessing";
 
@@ -12,6 +13,7 @@ import { EffectComposer, EffectPass, RenderPass } from "postprocessing";
 
 class Visualizer {
   constructor () {
+    this.chainedBalls = null;
   }
 
   init () {
@@ -22,6 +24,9 @@ class Visualizer {
         antialias: true
       });
       this._onResize();
+
+      /** SCENE ELEMENTS */
+      this.chainedBalls = new ChainedBalls(this.scene);
 
       /** EFFECT COMPOSER */
       this.composer = new EffectComposer(this.renderer, { depthTexture: true });
@@ -41,7 +46,7 @@ class Visualizer {
       // EVENTS 
       window.addEventListener("resize", this._onResize);
 
-      resolve();
+      this.chainedBalls.init().then(resolve).catch(reject);
     });
   }
 
