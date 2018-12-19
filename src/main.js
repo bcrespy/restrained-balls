@@ -30,6 +30,7 @@ class MyProject extends Creenv {
     this.visualizer = new Visualizer();
 
     this.audio = new AudioManager(AudioManager.SOURCE_TYPE.MICROPHONE, {
+      feedback: false,
       analyser: {
         peakDetection: {
           options: {
