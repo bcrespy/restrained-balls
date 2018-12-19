@@ -34,7 +34,7 @@ class MyProject extends Creenv {
       analyser: {
         peakDetection: {
           options: {
-            threshold: 1.1
+            threshold: 1.3
           }
         }
       }

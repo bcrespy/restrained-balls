@@ -7,6 +7,7 @@ import config from "./config";
 
 import Camera from "./camera";
 import ChainedBalls from "./chained-balls";
+import Particles from "./particles";
 
 import { EffectComposer, EffectPass, RenderPass, PixelationEffect, BlendFunction } from "postprocessing";
 import NoiseEffect from "./shaders/noise/noise.shader";
@@ -17,6 +18,7 @@ import AberationEffect from "./shaders/aberration/aberration.shader";
 class Visualizer {
   constructor () {
     this.chainedBalls = null;
+    this.particles = null;
   }
 
   init () {
@@ -30,6 +32,8 @@ class Visualizer {
 
       /** SCENE ELEMENTS */
       this.chainedBalls = new ChainedBalls(this.scene);
+      this.particles = new Particles(this.scene);
+
 
       /** EFFECT COMPOSER */
       this.composer = new EffectComposer(this.renderer, { depthTexture: true });
@@ -87,6 +91,7 @@ class Visualizer {
       this.aberationEffect.setRandomDirections();
     }
     this.aberationEffect.strength = audioData.peak.value/200.0;
+    this.particles.update(deltaT, time, audioData);
     this.chainedBalls.update(deltaT, time, audioData);
     this.composer.render(deltaT);
   }

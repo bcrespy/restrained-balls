@@ -35,6 +35,25 @@ export default {
         property: "rotationSpeed",
         min: 0, max: 3.0, step: 0.0001
       }
+    ],
+
+    [
+      "colored dots",
+
+      {
+        property: "scaleDecrease",
+        min: 0, max: 1.0, step: 0.0001
+      },
+
+      {
+        property: "coloredBallsNumber",
+        min: 0, max: 1.0, step: 0.0001
+      },
+
+      {
+        property: "velocity",
+        min: 0, max: 3.0, step: 0.00001
+      }
     ]
   ]
 }
