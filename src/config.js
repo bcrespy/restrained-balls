@@ -27,6 +27,8 @@ export default {
   // the factor of colored balls spawning at each peak 
   coloredBallsNumber: 0.3,
 
-  velocity: 0.7
+  velocity: 0.7,
+
+  aberationStrength: 0.6
 
 };

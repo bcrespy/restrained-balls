@@ -42,7 +42,7 @@ export default {
 
       {
         property: "scaleDecrease",
-        min: 0, max: 1.0, step: 0.0001
+        min: 0, max: 0.2, step: 0.0001
       },
 
       {
@@ -53,6 +53,15 @@ export default {
       {
         property: "velocity",
         min: 0, max: 3.0, step: 0.00001
+      }
+    ],
+
+    [
+      "post processing",
+
+      {
+        property: "aberationStrength",
+        min: 0, max: 5.0, step: 0.1
       }
     ]
   ]

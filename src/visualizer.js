@@ -90,7 +90,7 @@ class Visualizer {
     if (audioData.peak.value == 1.0) {
       this.aberationEffect.setRandomDirections();
     }
-    this.aberationEffect.strength = audioData.peak.value/200.0;
+    this.aberationEffect.strength = audioData.peak.value/100.0*config.aberationStrength;
     this.particles.update(deltaT, time, audioData);
     this.chainedBalls.update(deltaT, time, audioData);
     this.composer.render(deltaT);
